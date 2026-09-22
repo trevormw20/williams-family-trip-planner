@@ -6,7 +6,7 @@ let frame=0,flight=null,peekTimer=0;
 function settleTickets(){clearTimeout(peekTimer);nav.querySelectorAll('.mobile-peek').forEach(b=>{b.classList.remove('mobile-peek');b.classList.add('settled')})}
 function stop(){cancelAnimationFrame(frame);if(flight){flight.remove();flight=null}}
 function go(id,origin=null){const section=document.getElementById(id);if(!section)return;
- section.querySelectorAll('details').forEach(d=>d.open=true);
+ section.querySelectorAll(':scope > details, :scope > #live-days > details').forEach(d=>d.open=true);
  section.querySelectorAll('.section-title').forEach(title=>{if(title.nextElementSibling?.classList.contains('sec-collapsed'))title.click()});
  nav.querySelectorAll('button').forEach(b=>{if(b.dataset.section===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
  stop();const start=scrollY,end=Math.max(0,Math.min(section.getBoundingClientRect().top+scrollY-18,document.documentElement.scrollHeight-innerHeight)),began=performance.now();
