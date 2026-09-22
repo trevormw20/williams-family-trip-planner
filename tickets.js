@@ -1,7 +1,7 @@
 (()=>{
 const groups=[["days","Daily plans","itineraries"],["stay","Your stay","hotel"],["pack","Bring along","extras"],["help","Trip help","family-care"]];
 const nav=document.createElement('nav');nav.className='import-ticket-nav';nav.setAttribute('aria-label','Family guide sections');
-nav.innerHTML=groups.map(([id,label,art],i)=>`<button type="button" data-section="${id}" aria-label="${label}" style="--i:${i}"><img src=".../tickets/${art}.png" alt="" draggable="false"></button>`).join('');document.body.append(nav);
+nav.innerHTML=groups.map(([id,label,art],i)=>`<button type="button" data-section="${id}" aria-label="${label}" style="--i:${i}"><img src="../tickets/${art}.png" alt="" draggable="false"></button>`).join('');document.body.append(nav);
 let frame=0,flight=null,peekTimer=0;
 function settleTickets(){clearTimeout(peekTimer);nav.querySelectorAll('.mobile-peek').forEach(b=>{b.classList.remove('mobile-peek');b.classList.add('settled')})}
 function stop(){cancelAnimationFrame(frame);if(flight){flight.remove();flight=null}}
