@@ -1,5 +1,5 @@
 (()=>{
-const groups=[["days","Daily plans","itineraries"],["stay","Your stay","hotel"],["pack","Bring along","extras"],["help","Trip help","family-care"]];
+const groups=[["days","Daily plans","itineraries"],["stay","Your stay","hotel"],["pack","Bring along","extras"],["help","Trip help","family-care"],["ride-choices","Family wishes","wishes"]];
 const nav=document.createElement('nav');nav.className='import-ticket-nav';nav.setAttribute('aria-label','Family guide sections');
 nav.innerHTML=groups.map(([id,label,art],i)=>`<button type="button" data-section="${id}" aria-label="${label}" style="--i:${i}"><img src="../tickets/${art}.png" alt="" draggable="false"></button>`).join('');document.body.append(nav);
 let frame=0,flight=null,peekTimer=0;
